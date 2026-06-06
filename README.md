@@ -20,34 +20,6 @@ Then open http://localhost:8080
 - Username: `admin`
 - Password: `admin123`
 
-> Change these via environment variables before going public.
-
-## Deploy to Railway
-
-### 1. Push to GitHub
-```bash
-git init
-git add .
-git commit -m "initial commit"
-git remote add origin https://github.com/YOURUSERNAME/YOURREPO.git
-git push -u origin main
-```
-
-### 2. Deploy on Railway
-1. Go to https://railway.app → New Project → Deploy from GitHub
-2. Select your repo
-3. Railway auto-detects PHP via `nixpacks.toml`
-4. It will deploy and give you a public URL
-
-### 3. (Optional) Custom Domain
-In Railway project settings → Domains → Add Custom Domain.
-
-## Environment Variables (optional security)
-Set these in Railway dashboard → Variables:
-```
-ADMIN_EMAIL=admin
-ADMIN_PASS=your_secure_password_here
-```
 
 ## File Structure
 ```
@@ -73,9 +45,3 @@ ADMIN_PASS=your_secure_password_here
 ├── data/                  # Auto-created, stores JSON files
 ├── railway.json
 └── nixpacks.toml
-```
-
-## Notes
-- The `data/` folder is in `.gitignore` — your content stays local/on Railway's filesystem.
-- For persistent data on Railway: consider adding a volume or switching to a database.
-- Images: use external URLs (Imgur, GitHub, CDN) for game covers and screenshots.
